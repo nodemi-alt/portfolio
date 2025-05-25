@@ -37,21 +37,21 @@ export default function TabLayout() {
         name="projetos"
         options={{
           title: 'Projetos',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="chevron.left.forwardslash.chevron.right" color={color} />,
         }}
       />
       <Tabs.Screen
         name="experiencia"
         options={{
           title: 'Experiencia',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="briefcase" color={color} />,
         }}
       />
       <Tabs.Screen
         name="sobre"
         options={{
           title: 'Sobre',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="info" color={color} />,
         }}
       />
     </Tabs>
