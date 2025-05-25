@@ -32,6 +32,15 @@ export default function Projetos()
         };
     const animatedStyle2 = useAnimatedStyle(()=> { return { height:height2.value, overflow:"hidden" } })
 
+    const[expanded3, setExpanded3] = useState(false)
+    const height3 = useSharedValue(0)
+    const toggle3 = ()=>
+        {
+            setExpanded3(!expanded3)
+            height3.value = withTiming(expanded3? 0 : 185, { duration:400 });
+        };
+    const animatedStyle3 = useAnimatedStyle(()=> { return { height:height3.value, overflow:"hidden" } })
+
     return(
         
         <View style = {styles.root}>
@@ -69,6 +78,16 @@ export default function Projetos()
                     <Image source={require('@/assets/images/web.png')} style = {styles.tabIcon}/>
                     <ExternalLink href="http://webissimo.surge.sh/">
                     <Text style = {styles.linkText}>Webissimo</Text>
+                    </ExternalLink>
+                </Animated.View>
+            </View>
+
+            <View style = {styles.container}> 
+                <Button title ='Jogo da Vaca' color ="rgba(55, 8, 143, 0.84);" onPress={toggle3}/>
+                <Animated.View style = {[styles.content, animatedStyle3]}> 
+                    <Image source={require('@/assets/images/vaca.png')} style = {styles.tabVaca}/>
+                    <ExternalLink href="http://webissimo.surge.sh/E4-Portfolio/vaca/vaca.html">
+                    <Text style = {styles.linkText}>???????????</Text>
                     </ExternalLink>
                 </Animated.View>
             </View>
@@ -151,6 +170,12 @@ const styles = StyleSheet.create
     {
         height:40,
         width:30
+    },
+
+    tabVaca:
+    {
+        height:50,
+        width:70
     },
     
 });
